@@ -1,13 +1,13 @@
 import { ThemeProvider } from 'styled-components';
-import { ActivityIndicator } from 'react-native';
 import {
   useFonts,
   Roboto_400Regular,
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto';
 import theme from './src/theme';
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'react-native';
 import { Groups } from './src/screens/Groups';
+import { Loading } from './src/components/Loading';
 
 
 
@@ -18,13 +18,16 @@ export default function App() {
     Roboto_700Bold,
   });
 
-
-
   return (
 
     <ThemeProvider theme={theme}>
-      <StatusBar style="auto" />
-      {fontsLoaded ? <Groups /> : <ActivityIndicator />}
+      <StatusBar
+        barStyle="light-content"
+        translucent
+        backgroundColor="transparent"
+      />
+
+      {fontsLoaded ? <Groups /> : <Loading />}
     </ThemeProvider>
   );
 }
