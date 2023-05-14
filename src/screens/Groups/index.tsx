@@ -1,3 +1,4 @@
+import { GroupCard } from "../../components/GroupCard";
 import { Header } from "../../components/Header";
 import { Highlight } from "../../components/Highlight";
 import {
@@ -13,7 +14,7 @@ export function Groups() {
                 title="Turmas"
                 subTitle="Jogue com a sua turma"
             />
-
+            <GroupCard title="Galera do Futebol"/>
         </Container>
     );
 };
