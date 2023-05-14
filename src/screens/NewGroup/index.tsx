@@ -1,11 +1,12 @@
+import { useTheme } from "styled-components/native";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Highlight } from "../../components/Highlight";
 import { Input } from "../../components/Input";
-import theme from "../../theme";
 import { Container, IconNewGroup } from "./styles";
 
 export function NewGroup() {
+  const theme = useTheme();
   return (
     <>
       <Container>

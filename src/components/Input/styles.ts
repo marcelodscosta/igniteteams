@@ -6,4 +6,6 @@ export const InputText = styled.TextInput`
   border-radius: 6px;
   background-color: ${({ theme }) => theme.COLORS.GRAY_700};
   padding: 12px;
+  color: ${({ theme }) => theme.COLORS.WHITE};
+  font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
 `;
