@@ -4,6 +4,7 @@ import { Header } from "../../components/Header";
 import { Highlight } from "../../components/Highlight";
 import { Container, TextFlatList } from "./styles";
 import { FlatList } from "react-native";
+import { Button } from "../../components/Button";
 
 export function Groups() {
   const [groups, setGroups] = useState([
@@ -31,6 +32,8 @@ export function Groups() {
           </TextFlatList>
         }
       />
+
+      <Button title="Criar Nova Turma" />
     </Container>
   );
 }
