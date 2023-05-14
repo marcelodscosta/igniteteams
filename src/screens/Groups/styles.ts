@@ -11,5 +11,5 @@ export const TextFlatList = styled.Text`
   color: ${({ theme }) => theme.COLORS.GRAY_200};
   font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
   text-align: center;
-  margin: 16px 16px;
+  margin: 120px 16px;
 `;
