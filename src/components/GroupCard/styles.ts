@@ -3,15 +3,16 @@ import { UsersThree } from "phosphor-react-native";
 import { TouchableOpacity } from "react-native";
 
 export const Container = styled(TouchableOpacity)`
-  width: 380px;
-  height: 96px;
+  width: 100%;
+  height: 90px;
 
-  padding: 32px 24px;
   background-color: ${({ theme }) => theme.COLORS.GRAY_500};
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
   border-radius: 6px;
+
+  flex-direction: row;
+  align-items: center;
+
+  padding: 24px;
   margin-bottom: 12px;
 `;
 
@@ -25,6 +26,6 @@ export const IconGroup = styled(UsersThree).attrs(({ theme }) => ({
 
 export const TextGroup = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
-  color: ${({ theme }) => theme.COLORS.GRAY_100};
-  font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
+  color: ${({ theme }) => theme.COLORS.GRAY_200};
+  font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
 `;
