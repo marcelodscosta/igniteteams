@@ -19,8 +19,8 @@ export const Container = styled(TouchableOpacity)<FilterStyleProps>`
   align-items: center;
 
   align-self: flex-start;
-  margin-left: 24px;
-  margin-right: 12px;
+
+  margin-right: 6px;
   border-radius: 4px;
 `;
 
