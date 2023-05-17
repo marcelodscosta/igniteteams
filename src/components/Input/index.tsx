@@ -6,5 +6,5 @@ interface InputProps extends TextInputProps {
 }
 
 export function Input({ placeholder, ...rest }: InputProps) {
-  return <InputText placeholder={placeholder} {...rest} />;
+  return <InputText placeholder={placeholder} {...rest} autoCorrect={false} />;
 }

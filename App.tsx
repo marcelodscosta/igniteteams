@@ -25,7 +25,7 @@ export default function App() {
         backgroundColor="transparent"
       />
 
-      {fontsLoaded ? <Players /> : <Loading />}
+      {fontsLoaded ? <Groups /> : <Loading />}
     </ThemeProvider>
   );
 }
