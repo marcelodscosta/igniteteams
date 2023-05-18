@@ -10,8 +10,17 @@ import { useState } from "react";
 import { PlayerCard } from "../../components/PlayerCard";
 import { TextFlatList } from "../Groups/styles";
 import { Button } from "../../components/Button";
+import { useRoute } from "@react-navigation/native";
+
+type RouteParams = {
+  group: string;
+};
 
 export function Players() {
+  const route = useRoute();
+
+  const { group } = route.params as RouteParams;
+
   const [team, setTeam] = useState("Time A");
   const [players, setPlayers] = useState([
     "Marcelo",
@@ -27,10 +36,7 @@ export function Players() {
   return (
     <Container>
       <Header showBackButton />
-      <Highlight
-        title="Nome da Turma"
-        subTitle="Adicione a galera e separe os times"
-      />
+      <Highlight title={group} subTitle="Adicione a galera e separe os times" />
 
       <Form>
         <Input
