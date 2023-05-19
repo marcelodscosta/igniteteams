@@ -22,17 +22,9 @@ export function Players() {
   const { group } = route.params as RouteParams;
 
   const [team, setTeam] = useState("Time A");
-  const [players, setPlayers] = useState([
-    "Marcelo",
-    "Joaquim",
-    "Viviane",
-    "Murilo",
-    "Antonio",
-    "João",
-    "Maria",
-  ]);
+  const [players, setPlayers] = useState([]);
 
-  const teams = ["Time A", "Time B", "Time C"];
+  const teams = [""];
   return (
     <Container>
       <Header showBackButton />
