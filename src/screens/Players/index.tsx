@@ -16,6 +16,7 @@ import { AppError } from "../../utils/AppError";
 import { playerGetByGroup } from "../../storage/player/playerGetByGroup";
 import { playerGetByGroupAndTeam } from "../../storage/player/playersGetByGroupAndTeam";
 import { PlayerStorageDTO } from "../../storage/player/PlayerStorageDTO";
+import { playerRemoveByGroup } from "../../storage/player/playerRemoveByGroup";
 
 type RouteParams = {
   group: string;
@@ -41,7 +42,6 @@ export function Players() {
     }
     try {
       const newPlayer = { name: newPlayername, team };
-
       await playerAddByGroup(newPlayer, group);
       Keyboard.dismiss();
       fetchPlayerByTeam();
@@ -74,6 +74,15 @@ export function Players() {
   useEffect(() => {
     fetchPlayerByTeam();
   }, [team]);
+
+  async function handlePlayerRemove(playerName: string) {
+    try {
+      await playerRemoveByGroup(group, playerName);
+      fetchPlayerByTeam();
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <Container>
@@ -112,7 +121,12 @@ export function Players() {
         data={players}
         keyExtractor={(item) => item.name}
         renderItem={({ item }) => (
-          <PlayerCard name={item.name} onRemove={() => {}} />
+          <PlayerCard
+            name={item.name}
+            onRemove={() => {
+              handlePlayerRemove(item.name);
+            }}
+          />
         )}
         style={{ width: "98%", marginLeft: 40 }}
         ListEmptyComponent={() => (
